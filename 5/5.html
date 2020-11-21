@@ -1,0 +1,26 @@
+
+
+	<p>
+		<b>Телефон:</b> 8 (495) 212 85 06<br>
+		<b>Адрес:</b> г. Санкт-Петербург, Большой Сампсониевский проспект, д. 31
+	</p>
+	<div class="mb-2 embed-responsive embed-responsive-16by9">
+		<iframe class="embed-responsive-item" width="100%" height="490" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://yandex.ru/map-widget/v1/?um=constructor%3A63b4080d59db8dbfb00e93834ad9edf76fca13ee31f7c076f2655b5c0ca2269a&amp;source=constructor"></iframe>
+	</div>
+	<div class="mb-4">
+		<small><a href="https://yandex.ru/maps/2/saint-petersburg/house/bolshoy_sampsoniyevskiy_prospekt_31/Z0kYdQNjSEwCQFtjfXV3d39nbQ==/?ll=30.343195%2C59.966349&source=wizgeo&utm_medium=maps-desktop&utm_source=serp&z=16" style="text-align:left" target="_blank">Просмотреть увеличенную карту</a></small>
+	</div>
+	<h2>Задать вопрос</h2>
+
+	<?$APPLICATION->IncludeComponent(
+		"bitrix:main.feedback",
+		"bootstrap_v4",
+		Array(
+			"EMAIL_TO" => "sale@nyuta.bx",
+			"EVENT_MESSAGE_ID" => array(),
+			"OK_TEXT" => "Спасибо, ваше сообщение принято.",
+			"REQUIRED_FIELDS" => array("NAME","EMAIL"),
+			"USE_CAPTCHA" => "Y"
+		)
+	);?>
+

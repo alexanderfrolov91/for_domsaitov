@@ -1,0 +1,50 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Заказать звонок!
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel">Заказать звонок</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="call_form">
+              <p class="form-group">
+                  <label>Имя</label>
+                  <input id="name" name="name" type="text" class="form-control" />
+              </p>
+              <p class="form-group">
+                  <label>Телефон</label>
+                  <input id="phone" name="phone" type="text" class="form-control" />
+              </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="send_call" type="button" class="btn btn-primary">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+      $('#send_call').on('click', function(){
+          $.ajax({
+              url: '/include/call_send.php',
+              method: 'post',
+              data: {
+                  name: $('#call_form #name').val(),
+                  phone: $('#call_form #phone').val(),
+                  },
+              success: function(result){
+                  $('#call_form').html(result);
+              }
+          });
+      });
+  </script>
+  <!-- Ну и масочку прикрутить на телефон надо -->
+  <!-- Или еще чего проще - вытащить форму со страницы контакты -->
